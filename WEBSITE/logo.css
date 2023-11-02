@@ -1,0 +1,130 @@
+body{
+    margin: 0;
+    padding: 0;
+    
+    background: url("log.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: fill;
+}
+
+.jack p{font-weight: bold;
+    z-index: 5;
+}
+
+
+.jack{
+    width: 320px;
+    height: 420px;
+    background: #ffffff;
+    color: #000000;
+    top: 35%;
+    left: 85%;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    box-sizing: border-box;
+    padding: 70px 30px;
+    border-radius: 10%;
+    z-index: 5;
+
+}
+
+.hope{
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    
+    position: absolute;
+    top: -50px;
+    left: calc(50% - 50px);
+}
+.mail{
+    width: 25px;
+    height: 25px;
+    border-radius: 10%;
+    
+    position: absolute;
+    top: 145px;
+    left: calc(95% - 40px);
+}
+.loc{
+    width: 23px;
+    height: 23px;
+    border-radius: 10%;
+    
+    position: absolute;
+    top: 225px;
+    left: calc(95% - 40px);
+}
+
+h1{
+    margin: 0;
+    padding: 0 0 20px;
+    text-align: center;
+    font-size: 22px;
+}
+
+.jack p{
+    margin: 0;
+    padding: 0;
+    font-weight: bold;
+    z-index: 5;
+}
+.jack input{
+    width: 100%;
+    margin-bottom: 20px;
+    z-index: 5;
+
+}
+.jack input[type="text"], input[type="password"]{
+    border: none;
+    border-bottom: 1px solid #000000;
+    background: transparent;
+    outline: none;
+    height: 40px;
+    color: #000000;
+    font-size: 16px;
+    z-index: 5;
+
+}
+.jack input[type="submit"]{
+         border: none;
+         border: none;
+         outline: none;
+         height: 40px;
+         background: #fb2525;
+         color: #fff;
+         font-size: 18px;
+         border-radius: 20px;
+    z-index: 5;
+         
+}
+.jack input[type="submit"]:hover{
+    cursor: pointer;
+    background: #0155fe;
+    color: #000;
+    z-index: 5;
+
+}
+.jack a{
+    text-decoration: none;
+    font-size: 12px;
+    line-height: 20px;
+    color: darkgray;
+    z-index: 5;
+
+}
+.jack a:hover{
+    color: #00c8ff;
+    z-index: 5;
+
+}
+
+.input-box videoo{
+
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    z-index: -5;
+}
+

@@ -1,0 +1,61 @@
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="logo.css">
+</head>
+<body>
+    <div class="jack">
+        
+    <img src="ben.jpg" class="hope">
+    <!--<img src="emi.webp" class="mail"> 
+    <img src="loc.png" class="loc"> -->
+    <h1>Login</h1>
+    <p>Email</p>
+    <input type="text" placeholder="Email" >
+    <p>Password</p>
+    <input type="password" placeholder="Password">
+    <!--<input type="checkbox" id="remember-me" name="remember-me">
+                <label for="remember-me">Remember Me</label>-->
+        <input type="submit" value="Login">
+    <!--<button type="button">Login</button><br>-->
+    <br>
+    <a href="#">Forgot Password</a><br>
+    <a href="index1.html">Do not have account</a>
+    
+</div>
+<div class="input-box">
+     <span class="icon"><ion-icon name="mail"></ion-icon></span>
+   <video autoplay loop muted plays-inline class= "videoo">
+        <source src="bennn.mp4" type= "video/mp4">
+   </video>
+    </div>
+</body>
+</html>
+
+<script>
+// Get references to the email and password input fields
+var emailInput = document.querySelector('input[type="text"]');
+var passwordInput = document.querySelector('input[type="password"]');
+
+// Set the correct login credentials
+var correctEmail = 'example@example.com';
+var correctPassword = 'password123';
+
+// Add an event listener to the submit button
+document.querySelector('input[type="submit"]').addEventListener('click', function(event) {
+    // Prevent the form from being submitted
+    event.preventDefault();
+
+    // Check if the entered email and password are correct
+    if (emailInput.value === correctEmail && passwordInput.value === correctPassword) {
+        // Login successful
+        alert('Login successful!');
+    } else {
+        // Login failed
+        alert('Login failed. Please enter the correct email and password.');
+    }
+});</script>
+

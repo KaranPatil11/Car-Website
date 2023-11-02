@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!--<title>Registration Form</title>-->
+    <style>
+        /* Add some styling to the form */
+        form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        input[type="text"], input[type="password"], input[type="tel"] {
+            margin-bottom: 10px;
+            padding: 10px;
+            width: 200px;
+        }
+        input[type="submit"] {
+            padding: 10px 20px;
+        }
+         /* Set the height of the body */
+         body {
+            height: 100vh;
+            margin: 0;
+            background-image: url("c.jpg"); /* Set your desired background image here */
+            background-size: cover;
+        }
+        .registration-box{
+            width: 320px;
+            height: 600px;
+            backdrop-filter: blur(10px);
+            color: rgb(0, 0, 0);
+            top: 50%;
+            left: 50%;
+            position: absolute;
+            transform: translate(-50%, -50%);
+            box-sizing: border-box;
+            padding: 70px 30px;
+            border-radius: 10%;
+        }
+.registration-box input{
+    width: 100%;
+    margin-bottom: 20px;
+}
+.registration-box input[type="text"], input[type="password"]{
+    height: 20px;
+    color: black;
+    font-size: 16px;
+}
+.registration-box input[type="submit"]{
+         border: none;
+         border: none;
+         outline: none;
+         height: 40px;
+         background: #fb2525;
+         color: #fff;
+         font-size: 18px;
+         border-radius: 20px;
+}
+.registration-box input[type="submit"]:hover{
+    cursor: pointer;
+    background: blue;
+    color: #000;
+}
+        
+    </style>
+</head>
+<body>
+   
+    <div class="registration-box">
+        <h1 style="text-align: center;">Registration Form</h1>
+    <form id="registration-form">
+        <label for="email">Email:</label>
+        <input type="text" id="email" name="email">
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password">
+        <label for="confirm-password">Confirm Password:</label>
+        <input type="password" id="confirm-password" name="confirm-password">
+        <label for="phone-number">Phone Number:</label>
+        <input type="tel" id="phone-number" name="phone-number">
+        <label for="gender">Gender:</label>
+        <select id="gender" name="gender">
+            <option value="">Select Gender</option>
+            <option value="male">Male</option>
+            <option value="female">Female</option>
+        </select><br><br>
+        <input type="submit" value="Register">
+    </form>
+</div>
+
+    <script>
+        // Get references to the form elements
+        var form = document.querySelector('#registration-form');
+        var emailInput = document.querySelector('#email');
+        var passwordInput = document.querySelector('#password');
+        var confirmPasswordInput = document.querySelector('#confirm-password');
+        var phoneNumberInput = document.querySelector('#phone-number');
+        
+        // Add an event listener to the form's submit event
+        form.addEventListener('submit', function(event) {
+            // Prevent the form from being submitted
+            event.preventDefault();
+
+            // Validate the entered information
+            if (validateEmail(emailInput.value) && validatePassword(passwordInput.value) && validateConfirmPassword(passwordInput.value, confirmPasswordInput.value) && validatePhoneNumber(phoneNumberInput.value)) {
+                // If all information is valid, submit the form
+                alert('Registration successful!');
+                form.submit();
+            } else {
+                // If any information is invalid, display an error message
+                alert('Please enter valid information.');
+            }
+        });
+
+         // Function to validate an email address
+         function validateEmail(email) {
+             // Use a regular expression to check if the email is in a valid format
+             var re = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/;
+             return re.test(email);
+         }
+
+         // Function to validate a password
+         function validatePassword(password) {
+             // Check if the password is at least 8 characters long
+             return password.length >= 8;
+         }
+
+         // Function to validate the confirm password
+         function validateConfirmPassword(password, confirmPassword) {
+             // Check if the confirm password matches the password
+             return password === confirmPassword;
+         }
+
+         // Function to validate a phone number
+         function validatePhoneNumber(phoneNumber) {
+             // Use a regular expression to check if the phone number is in a valid format
+             var re = /^\d{10}$/;
+             return re.test(phoneNumber);
+         }
+    </script>
+</body>
+</html>
