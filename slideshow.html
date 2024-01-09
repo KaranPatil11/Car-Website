@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Automatic Image Slideshow</title>
+    <style>
+        .running-text {
+            position: absolute;
+            bottom: 10px;
+            left: 0;
+            width: 150%;
+            text-align: center;
+            background-color: rgba(0, 0, 0, 0.7);
+            color: white;
+            padding: 10px;
+            animation: runningTextAnimation 7s linear infinite; 
+        }
+
+        @keyframes runningTextAnimation {
+            0% {
+                transform: translateX(100%);
+            }
+            100% {
+                transform: translateX(-100%);
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="slideshow-container">
+    <!-- Slides -->
+    <div class="mySlides">
+        <img src="a.jpg" style="width:100%">
+        <div class="caption-container">
+            <p class="numbertext"></p>
+        </div>
+        <div class="running-text">
+            <p style="font-size: 50px;"><b>The cars we drive say a lot about us</b></p>
+        </div>
+    </div>
+
+    <div class="mySlides">
+        <img src="b.jpg" style="width:100%">
+        <div class="caption-container">
+            <p class="numbertext"></p>
+        </div>
+        <div class="running-text">
+            <p style="font-size: 50px;"><b>DRIVING BEYOND SOULS</b></p>
+        </div>
+    </div>
+
+    <div class="mySlides">
+        <img src="p.jpg" style="width:100%">
+        <div class="caption-container">
+            <p class="numbertext"></p>
+        </div>
+        <div class="running-text">
+            <p style="font-size: 50px;"><b>If youre in control, youre not going fast enough</b></p>
+        </div>
+    </div>
+
+    <div class="mySlides">
+        <img src="y.jpg" style="width:100%">
+        <div class="caption-container">
+            <p class="numbertext"></p>
+        </div>
+        <div class="running-text">
+            <p style="font-size: 50px;"><b>The best car safety device is a rear-view mirror with a cop in it</b></p>
+        </div>
+    </div>
+
+    <div class="mySlides">
+        <img src="z.jpg" style="width:100%">
+        <div class="caption-container">
+            <p class="numbertext"></p>
+        </div>
+        <div class="running-text">
+            <p style="font-size: 50px;"><b>When you have a great car, you want people to see the car</b></p>
+        </div>
+    </div>
+
+    <div class="mySlides">
+        <img src="f.jpg" style="width:100%">
+        <div class="caption-container">
+            <p class="numbertext"></p>
+        </div>
+        <div class="running-text">
+            <p style="font-size: 50px;"><b>Cars are the sculptures of our everyday lives.</b></p>
+        </div>
+    </div>
+
+    
+
+    <!-- Navigation buttons -->
+    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+    <a class="next" onclick="plusSlides(1)">&#10095;</a>
+</div>
+
+<script>
+    // JavaScript for controlling the slideshow
+    let slideIndex = 1;
+    showSlides(slideIndex);
+
+    // Function to move to the next or previous slide
+    function plusSlides(n) {
+        showSlides(slideIndex += n);
+    }
+
+    // Function to display a specific slide
+    function currentSlide(n) {
+        showSlides(slideIndex = n);
+    }
+
+    // Automatic slideshow
+    function autoSlide() {
+        showSlides(slideIndex += 1);
+    }
+
+    setInterval(autoSlide, 5000); 
+
+    function showSlides(n) {
+        let i;
+        const slides = document.getElementsByClassName("mySlides");
+
+        if (n > slides.length) {
+            slideIndex = 1;
+        }
+        if (n < 1) {
+            slideIndex = slides.length;
+        }
+
+        // Hide all slides
+        for (i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";
+        }
+
+        // Display the current slide
+        slides[slideIndex - 1].style.display = "block";
+    }
+</script>
+
+</body>
+</html>
